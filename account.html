@@ -1,0 +1,23 @@
+<html>
+<head>
+<title> polkadot function </title>
+<script src="http://157.230.145.40/dapp/temp/polkadot1.js"></script>
+</head>
+<body>
+<script>
+async function connect() {
+    let endpoint = 'wss://kusama-rpc.polkadot.io/';
+    if (!window.substrate || global.endpoint != endpoint) {
+        const provider = new api.WsProvider(endpoint);
+        document.getElementById('output').innerHTML = 'Connecting to Endpoint...';
+        window.substrate = await api.ApiPromise.create({ provider });
+        global.endpoint = endpoint;
+        document.getElementById('output').innerHTML = 'Connected';
+    }
+}
+</script>
+<p> testing to polkadot </p>
+<div id="output"></div>
+</body>
+</html>
+
