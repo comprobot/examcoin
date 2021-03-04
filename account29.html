@@ -1,7 +1,7 @@
 <html>
 <head>
 <title> polkadot function </title>
-<script src="http://157.230.145.40/dapp/temp/edgewaredo.js"></script>
+<script src="http://157.230.145.40/dapp/temp/polkadot1.js"></script>
 </head>
 <body>
 <script>
@@ -37,7 +37,7 @@ function connect() {
 }
 function getbalance()
 {
-    //let balance = window.substrate.query.balances.freeBalance("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ");
+    let balance = window.substrate.query.balances.freeBalance("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ");
     //let balance = window.substrate.query.system.account.at("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ");
     //let balance = window.substrate.query.balances.freeBalance.at("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ");
     
@@ -49,7 +49,7 @@ function getbalance()
     
     
     //const balance = api.query.balances.freeBalance(hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ);
-    //alert(balance);
+    alert(balance);
     
 }
     
