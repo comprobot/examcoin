@@ -25,13 +25,18 @@ function connect() {
         const provider = new api.WsProvider(endpoint);
         document.getElementById('output').innerHTML = 'Connecting to Endpoint... edgeware';
         window.substrate = api.ApiPromise.create({ provider });
+        
+        
+        
         global.endpoint = endpoint;
         // Retrieve the chain & node information information via rpc calls
         
-        
         document.getElementById('output').innerHTML = 'Connected';
         
-        alert(api.genesisHash);
+        const balance =  api.query.balances.freeBalance("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ");
+        
+        alert(balance);
+        //alert(api.genesisHash);
         //alert(window.substrate.query.system.account.at("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ"));
         //alert(window.substrate);
         
@@ -49,7 +54,7 @@ function getbalance()
     //alert("timenow : "+timestamp);
     //alert("substrate object:"+window.substrate);
     //alert("substrate object:"+window.substrate.toString());
-    
+    //const balance = await api.query.balances.freeBalance(address);
     
     
     
