@@ -6,10 +6,10 @@
 <body>
 <script>
 async function connect() {
-    let endpoint = 'wss://kusama-rpc.polkadot.io/';
+    let endpoint = 'wss://mainnet1.edgewa.re/';
     if (!window.substrate || global.endpoint != endpoint) {
         const provider = new api.WsProvider(endpoint);
-        document.getElementById('output').innerHTML = 'Connecting to Endpoint...';
+        document.getElementById('output').innerHTML = 'Connecting to Endpoint... edgeware';
         window.substrate = await api.ApiPromise.create({ provider });
         global.endpoint = endpoint;
         document.getElementById('output').innerHTML = 'Connected';
