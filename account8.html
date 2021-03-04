@@ -15,14 +15,14 @@ var global = {
     chainToken: 'Units',
     layout: {},
 };    
-async function connect() {
+function connect() {
     let endpoint = 'wss://mainnet1.edgewa.re/';
     if (!window.substrate || global.endpoint != endpoint) {
         
         const provider = new api.WsProvider(endpoint);
         document.getElementById('output').innerHTML = 'Connecting to Endpoint... edgeware';
         alert("---start---");
-        window.substrate = await api.ApiPromise.create({ provider });
+        window.substrate = api.ApiPromise.create({ provider });
         alert("---start---1");
         global.endpoint = endpoint;
         alert("---start---2");
@@ -41,8 +41,8 @@ async function getbalance()
 <p> testing to polkadot </p>
 <div id="output"></div>
  <script>
-     await connect();
-     await getbalance();
+      connect();
+     //await getbalance();
  </script>
 </body>
 </html>
