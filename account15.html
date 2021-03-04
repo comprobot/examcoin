@@ -32,8 +32,9 @@ function connect() {
 }
 function getbalance()
 {
-    let balance = window.substrate.query.balances.freeBalance("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ");
-    alert(balance.toNumber());
+    //let balance = window.substrate.query.balances.freeBalance("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ");
+    let account = api.query.system.account("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ");
+    alert(account.data.free.toNumber());
     
 }
     
