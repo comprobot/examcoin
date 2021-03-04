@@ -30,9 +30,9 @@ async function connect() {
         alert("---start---3");
     }
 }
-function getbalance()
+async function getbalance()
 {
-    let balance = await substrate.query.balances.freeBalance("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ")
+    let balance = await substrate.query.balances.freeBalance("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ");
     alert(balance.toNumber());
     
 }
@@ -41,8 +41,8 @@ function getbalance()
 <p> testing to polkadot </p>
 <div id="output"></div>
  <script>
-     connect();
-     getbalance();
+     await connect();
+     await getbalance();
  </script>
 </body>
 </html>
