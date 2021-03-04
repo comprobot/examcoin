@@ -15,7 +15,7 @@ var global = {
     chainToken: 'Units',
     layout: {},
 };    
-async function connect() {
+function connect() {
     let endpoint = 'wss://mainnet1.edgewa.re/';
     if (!window.substrate || global.endpoint != endpoint) {
         
@@ -45,6 +45,10 @@ window.onload = async function () {
 </script>
 <p> testing to polkadot </p>
 <div id="output"></div>
+ <script>
+     connect();
+     getbalance();
+ </script>
 </body>
 </html>
 
