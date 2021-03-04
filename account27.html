@@ -26,12 +26,11 @@ function connect() {
         document.getElementById('output').innerHTML = 'Connecting to Endpoint... edgeware';
         window.substrate = api.ApiPromise.create({ provider });
         global.endpoint = endpoint;
-
         // Retrieve the chain & node information information via rpc calls
-        console.log(api.rpc.system.chain());
-        console.log(api.rpc.system.name());
-        console.log(api.rpc.system.version());
+        
+        
         document.getElementById('output').innerHTML = 'Connected';
+        alert(api.query.timestamp.now());
     }
 }
 function getbalance()
