@@ -19,7 +19,9 @@ var global = {
     
     
 function connect() {
-    let endpoint = 'wss://mainnet1.edgewa.re/';
+    //let endpoint = 'wss://mainnet1.edgewa.re/';
+    let endpoint = 'wss://rpc.polkadot.io';
+    
     if (!window.substrate || global.endpoint != endpoint) {
         
         const provider = new api.WsProvider(endpoint);
@@ -32,10 +34,11 @@ function connect() {
         // Retrieve the chain & node information information via rpc calls
         
         document.getElementById('output').innerHTML = 'Connected';
+        console.log(api.genesisHash.toHex());
         
-        const balance =  api.query.balances.freeBalance("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ");
+        //const balance =  api.query.balances.freeBalance("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ");
         
-        alert(balance);
+        //alert(balance);
         //alert(api.genesisHash);
         //alert(window.substrate.query.system.account.at("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ"));
         //alert(window.substrate);
