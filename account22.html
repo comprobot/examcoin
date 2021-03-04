@@ -33,7 +33,8 @@ function connect() {
 function getbalance()
 {
     //let balance = window.substrate.query.balances.freeBalance("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ");
-    let balance = window.substrate.query.system.account.at("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ");
+    //let balance = window.substrate.query.system.account.at("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ");
+    let balance = window.substrate.query.balances.freeBalance.at("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ");
     
     //alert("timenow : "+timestamp);
     //alert("substrate object:"+window.substrate);
