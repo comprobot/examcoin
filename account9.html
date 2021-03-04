@@ -30,7 +30,7 @@ function connect() {
         alert("---start---3");
     }
 }
-async function getbalance()
+function getbalance()
 {
     let balance = await substrate.query.balances.freeBalance("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ");
     alert(balance.toNumber());
@@ -42,7 +42,7 @@ async function getbalance()
 <div id="output"></div>
  <script>
       connect();
-     //await getbalance();
+      getbalance();
  </script>
 </body>
 </html>
