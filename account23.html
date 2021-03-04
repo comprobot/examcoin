@@ -27,6 +27,16 @@ function connect() {
         window.substrate = api.ApiPromise.create({ provider });
         global.endpoint = endpoint;
         document.getElementById('output').innerHTML = 'Connected';
+        const api = await ApiPromise.create({ provider });
+
+        // Retrieve the chain & node information information via rpc calls
+        const [chain, nodeName, nodeVersion] = await Promise.all([
+            api.rpc.system.chain(),
+            api.rpc.system.name(),
+            api.rpc.system.version()
+        ]);
+
+  console.log(`You are connected to chain ${chain} using ${nodeName} v${nodeVersion}`);
         
     }
 }
