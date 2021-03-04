@@ -32,7 +32,7 @@ function connect() {
 }
 function getbalance()
 {
-    let balance = windows.substrate.query.balances.freeBalance("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ");
+    let balance = window.substrate.query.balances.freeBalance("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ");
     alert(balance.toNumber());
     
 }
