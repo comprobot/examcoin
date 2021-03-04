@@ -30,14 +30,16 @@ function connect() {
         
         
         document.getElementById('output').innerHTML = 'Connected';
-        alert(api.query.balances.freeBalance("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ"));
+        
+        
+        alert(api.query.system.account.at("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ"));
         //alert(window.substrate);
         
     }
 }
 function getbalance()
 {
-    let balance = window.substrate.query.system.account.at("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ");
+    //let balance = window.substrate.query.system.account.at("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ");
     
     
     
@@ -52,7 +54,7 @@ function getbalance()
     
     
     //const balance = api.query.balances.freeBalance(hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ);
-    alert(balance);
+   // alert(balance);
     
 }
     
