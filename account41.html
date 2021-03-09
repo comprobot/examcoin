@@ -14,7 +14,38 @@ var global = {
     chainDecimals: '',
     chainToken: 'Units',
     layout: {},
-};    
+};  
+    
+function MakeQuerablePromise(promise) {
+    // Don't modify any promise that has been already modified.
+    if (promise.isResolved) return promise;
+
+    // Set initial state
+    var isPending = true;
+    var isRejected = false;
+    var isFulfilled = false;
+
+    // Observe the promise, saving the fulfillment in a closure scope.
+    var result = promise.then(
+        function(v) {
+            isFulfilled = true;
+            isPending = false;
+            return v; 
+        }, 
+        function(e) {
+            isRejected = true;
+            isPending = false;
+            throw e; 
+        }
+    );
+
+    result.isFulfilled = function() { return isFulfilled; };
+    result.isPending = function() { return isPending; };
+    result.isRejected = function() { return isRejected; };
+    console.log(result);
+    return result;
+}
+    
     
     
     
@@ -34,9 +65,16 @@ function connect() {
         // Retrieve the chain & node information information via rpc calls
         
         document.getElementById('output').innerHTML = 'Connected';
-        console.log(api._genesisHash);
-        console.log(window.substrate._isReady);
-         console.log(window.substrate);
+        //console.log(api._genesisHash);
+        //console.log(window.substrate._isReady);
+        
+        var myPromise = MakeQuerablePromise(window.substrate);
+        
+        
+        
+        
+        
+        // console.log(window.substrate);
         
         
         //const balance =  api.query.balances.freeBalance("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ");
