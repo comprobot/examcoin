@@ -39,10 +39,21 @@ function MakeQuerablePromise(promise) {
         }
     );
 
-    result.isFulfilled = function() { return isFulfilled; };
+    result.isFulfilled = function() {
+        
+        
+        console.log(promise);
+        console.log(promise._genesisHash);
+        console.log(promise.genesisHash);
+        
+        return isFulfilled; 
+    };
     result.isPending = function() { return isPending; };
     result.isRejected = function() { return isRejected; };
-    console.log(result);
+    
+    
+    
+    
     return result;
 }
     
@@ -59,7 +70,7 @@ function connect() {
         document.getElementById('output').innerHTML = 'Connecting to Endpoint... edgeware';
         window.substrate = api.ApiPromise.create({ provider });
         
-        alert("test");
+        //alert("test");
         
         
         global.endpoint = endpoint;
