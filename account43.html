@@ -54,11 +54,12 @@ function connect() {
     //let endpoint = 'wss://rpc.polkadot.io';
     
     if (!window.substrate || global.endpoint != endpoint) {
-        
+        console.log("111111111111");
         const provider = new api.WsProvider(endpoint);
         document.getElementById('output').innerHTML = 'Connecting to Endpoint... edgeware';
         window.substrate = api.ApiPromise.create({ provider });
         
+        alert("test");
         
         
         global.endpoint = endpoint;
@@ -68,7 +69,7 @@ function connect() {
         //console.log(api._genesisHash);
         //console.log(window.substrate._isReady);
         
-         console.log(window.substrate);
+        console.log(window.substrate);
         var myPromise2 = MakeQuerablePromise(window.substrate);
         
         
