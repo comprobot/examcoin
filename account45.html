@@ -41,16 +41,20 @@ function MakeQuerablePromise(promise) {
 
     result.isFulfilled = function() {
         
+        console.log("obj ... fulfilled");    
+        
         
         
         return isFulfilled; 
     };
     result.isPending = function() { return isPending; };
     result.isRejected = function() { return isRejected; };
+    
+    /*
     console.log(promise);
-        console.log(promise._genesisHash);
-        console.log(promise.genesisHash);
-        
+    console.log(promise._genesisHash);
+    console.log(promise.genesisHash);
+      */  
     
     
     
@@ -80,9 +84,12 @@ function connect() {
         //console.log(api._genesisHash);
         //console.log(window.substrate._isReady);
         
-        console.log(window.substrate);
+        console.log("main: "+window.substrate);
         var myPromise2 = MakeQuerablePromise(window.substrate);
         
+        
+        
+        console.log(myPromise2);
         
         
         
