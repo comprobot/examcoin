@@ -42,15 +42,15 @@ function MakeQuerablePromise(promise) {
     result.isFulfilled = function() {
         
         
-        console.log(promise);
-        console.log(promise._genesisHash);
-        console.log(promise.genesisHash);
         
         return isFulfilled; 
     };
     result.isPending = function() { return isPending; };
     result.isRejected = function() { return isRejected; };
-    
+    console.log(promise);
+        console.log(promise._genesisHash);
+        console.log(promise.genesisHash);
+        
     
     
     
