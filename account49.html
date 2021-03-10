@@ -89,17 +89,18 @@ function connect() {
         var myPromise2 = MakeQuerablePromise(window.substrate);
         var promisetest = window.substrate;
         
-        promisetest
-  .then(value => {
-    console.log(value) // 1
-    
-  })
-  .then(value => {
-    console.log(value) // 2
-    
+        promisetest.then(value => {
+    console.log("haha"+value) // 1    
   })
   .catch(err => console.log(err.message))
         
+        var promiseresolve  = promisetest.resolve(3);
+        
+        promiseresolve.then(value => {
+     console.log("resolve"+value) // 1    
+  })
+  .catch(err => console.log(err.message))
+  
         
         
         
