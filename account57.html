@@ -110,9 +110,10 @@ function connect() {
             
                 //console.log(success.query.balances.account.at("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ"));
             
-            const unsub = success.query.system.account.multi(["hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ"], (balances) => {
-                const [{ data: balance1 }] = balances;
-                console.log('The balances are ${balance1.free}');
+            const unsub = success.query.system.account.multi(["hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ"], (balances1) => {
+                console.log("balance1");
+                console.log(balance1);
+                
              });
             
             
