@@ -16,7 +16,7 @@ var global = {
     layout: {},
 };  
     
-asnyc function MakeQuerablePromise(promise) {
+function MakeQuerablePromise(promise) {
     // Don't modify any promise that has been already modified.
     if (promise.isResolved) return promise;
 
@@ -85,7 +85,22 @@ function connect() {
         //console.log(window.substrate._isReady);
         
         console.log("main: "+window.substrate);
+        
         var myPromise2 = MakeQuerablePromise(window.substrate);
+        var promisetest = window.substrate;
+        
+        promisetest
+  .then(value => {
+    console.log(value) // 1
+    
+  })
+  .then(value => {
+    console.log(value) // 2
+    
+  })
+  .catch(err => console.log(err.message))
+        
+        
         
         
         
