@@ -110,14 +110,14 @@ function connect() {
             
                 //console.log(success.query.balances.account.at("hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ"));
             
-            const unsub = success.query.system.account.multi(["hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ"], (balances) => {
+            const unsub1 = success.query.system.account.multi(["hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ"], (balances) => {
                 console.log("balances 1");
                 console.log(balances);
                 
              });
             
             
-            const unsub = success.queryMulti([
+            const unsub2 = success.queryMulti([
                 success.query.timestamp.now,[success.query.system.account, "hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ"]
                 ], ([now, { nonce, data: balance }]) => {
                     console.log(`${now}: balance of ${balance.free} and a nonce of ${nonce}`);
