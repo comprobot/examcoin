@@ -117,6 +117,11 @@ function connect() {
              });
             
             
+            const unsub = success.queryMulti([
+                success.query.timestamp.now,[success.query.system.account, "hhWb3maNpMm2hprDkw3ZXQ7nKp9UsSmKG7qXrDUuLnKGVkZ"]
+                ], ([now, { nonce, data: balance }]) => {
+                    console.log(`${now}: balance of ${balance.free} and a nonce of ${nonce}`);
+            });
             
             
             
