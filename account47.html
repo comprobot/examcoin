@@ -16,7 +16,7 @@ var global = {
     layout: {},
 };  
     
-function MakeQuerablePromise(promise) {
+asnyc function MakeQuerablePromise(promise) {
     // Don't modify any promise that has been already modified.
     if (promise.isResolved) return promise;
 
