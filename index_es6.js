@@ -11,6 +11,40 @@ web3Enable('polkadot-js/apps');
 // Samples
 class PolkadotWeb3JSSample {
 	
+	/***
+	 * decodeToAddress
+	 * @return {"address":"5D2JMakX2CgtPPkiqUzdsK3Y41vD6HyNy8ZETUjhjRrZFTfG"}
+
+	 */
+	async decodeToAddress(from,prefix) {
+		
+		const prefixes = {
+			polkadot: 0,
+			kusama: 2,
+			plasm: 5,
+			bifrost: 6,
+			edgeware: 7,
+			karura: 8,
+			reynolds: 9,
+			acala: 10,
+			laminar: 11,
+			substratee: 13,
+			kulupu: 16,
+			darwinia: 18,
+			robonomics: 32,
+			centrifuge: 36,
+			substrate: 42,
+			chainx: 44
+		};
+		if (typeof prefix !== "number") {
+			prefix = prefixes[prefix] || 42;
+		}
+		
+		let decoded = util.decodeAddress(from);
+		return util.encodeAddress(from, prefix);
+
+	}	
+	
 	
 	/***
 	 * login
