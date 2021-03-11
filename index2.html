@@ -10,9 +10,14 @@
         var accounts = [];
         function login() {
             window.PolkadotWeb3JSSample.login().then(res => {
-			    console.log(accounts);
+		console.log(accounts[0]);
+		    
                 accounts = res;
                 document.getElementById("loginDiv").innerHTML = JSON.stringify(accounts);
+		console.log(accounts[1]);    
+		    
+		    
+		    
             }).catch(e => {
                 console.log(e);
                 alert(e);
